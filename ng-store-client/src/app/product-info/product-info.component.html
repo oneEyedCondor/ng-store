@@ -1,0 +1,40 @@
+<div class="product">
+    <div *ngIf="product" class="product-info">
+        <div class="product-info-blc-left">
+            <img 
+                [src]="product.image" 
+                [alt]="product.name">
+        </div>
+        <div class="product-info-blc-right">
+            <p class="product-name">{{product.name}}</p>
+            <p class="product-price">{{product.price | currency}}</p>
+            <p class="product-desc">{{product.description}}</p>
+            <button (click)="addToCart()">add to cart</button>
+        </div>
+    </div>
+
+    <div class="product-comments">
+        <p class="comment" *ngFor="let c of comments">
+            <span class="comment-username">{{c?.user.name}}</span>
+            <span class="comment-date">{{c?.date | date:'medium'}}</span>
+            <span class="comment-text">{{c?.text}}</span>
+        </p>
+
+        <p class="comment-form">
+            <input 
+                [(ngModel)]="textOfComment"
+                placeholder="your comment..."
+                (keydown.enter)="addCommentToProduct()">
+            <button (click)="addCommentToProduct()">add comment</button>
+        </p>
+    </div>
+</div>
+
+
+<div 
+    *ngIf="!product"
+    class="product-not-found"
+>
+    Sorry. Product not found!
+    <a routerLink="/">Go to products</a>
+</div>

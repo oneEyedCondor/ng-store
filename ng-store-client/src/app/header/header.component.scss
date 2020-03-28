@@ -1,0 +1,131 @@
+@import '../shared/makeup/colors.scss';
+
+.header {
+    height: 100px;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid $clr-black;
+    overflow: hidden;
+    
+    &-blc-logo {
+        height: 100%;
+        width: 15%;
+        background-image: url(../shared/makeup/logo.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-origin: border-box;
+        background-clip: border-box;
+        transform: scale(1.8);
+        cursor: pointer;
+        outline: none;
+    }
+
+    &-blc-control-usercard {
+        position: absolute;
+        z-index: 999;
+        top: 10%;
+        right: 2%;
+
+        span {
+            margin-right: 1em;
+            font-size: 0.8rem;
+            color: $clr-grey;
+        }
+
+        .fa-user-icon {
+            font-size: 1.2rem;
+            color: $clr-blue;
+            transition: 0.3s;
+            cursor: pointer;
+    
+            &:hover {
+                transition: 0.3s;
+                color: $clr-purple; 
+            }
+        }
+    }
+
+    &-blc-cart-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        p {
+            margin-bottom: 0.3em;
+            line-height: 1.5;
+            text-transform: capitalize;
+        }
+
+        button {
+            text-transform: capitalize;
+            padding: 0.6em 1.2em;
+        }
+    }
+
+    &-blc-user {
+        height: 90%;
+        width: 20%;
+        position: absolute;
+        top: 5%;
+        right: 0.5%;
+        border-radius: 3px;
+        overflow: hidden;
+
+        &-card {
+            height: 100%;
+            padding: 0.3em;
+            position: relative;
+            background-color: $clr-grey-light;
+            box-sizing: border-box;
+
+            button {
+                padding: 0.6em 1.2em;
+                text-transform: capitalize;
+            }
+
+            .user-info {
+                img {
+                    height: 60px;
+                    margin-right: 0.5em;
+                    float: left;
+                    border-radius: 3px;
+                }
+
+                span {
+                    display: block;
+                    font-size: 0.7rem;
+                    line-height: 1.5;
+
+                    &:first-of-type {
+                        padding-top: 2em;
+                    }
+                }
+
+                strong {
+                    font-weight: 700;
+                }
+
+                button {
+                    position: absolute;
+                    bottom: 6%;
+                    right: 3%;
+                }
+            }
+
+            .user-auth {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .drown {
+        z-index: -999;
+    }
+}

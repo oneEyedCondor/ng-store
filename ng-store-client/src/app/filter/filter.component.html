@@ -1,0 +1,30 @@
+<div class="filter">
+    <strong>filter by</strong>
+    <p>
+        price:
+        <button
+            [class.btn-active]="productsFilter.orderBy === 'price_high'"
+            (click)="changeFilter('price_high')">&#8593;
+        </button
+        >
+        <button 
+            [class.btn-active]="productsFilter.orderBy === 'price_low'"
+            (click)="changeFilter('price_low')">&#8595;
+        </button>
+    </p>
+    <p>
+        name:
+        <button 
+            [class.btn-active]="productsFilter.orderBy === 'name'"
+            (click)="changeFilter('name')">&Alpha;
+        </button>
+    </p>
+    <p>
+        <input 
+            [class.highlight]="productsFilter.searchStr"
+            type="text" 
+            placeholder="search product..."
+            [(ngModel)]="productsFilter.searchStr"
+            (ngModelChange)="changeFilter()">
+    </p>
+</div>

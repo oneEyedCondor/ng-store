@@ -1,0 +1,65 @@
+@import '../shared/makeup/colors.scss';
+
+.product-card {
+    width: 250px;
+    margin-bottom: 1em;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    border: 1px solid $clr-black;
+    border-radius: 3px;
+    overflow: hidden;
+
+    img {
+        height: 350px;
+        cursor: pointer;
+    }
+
+    p {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+            font-weight: bold;
+            // overflow: hidden;
+
+            &:hover {
+                // overflow: unset;
+                // max-height: unset;
+            }
+        }
+
+        strong,
+        span {
+            margin-top: 0.5em;
+            padding: 0 1em;
+        }
+    }
+
+    button {
+        width: 50%;
+        margin-top: 1em;
+        padding: 0.5em 0;
+        text-transform: capitalize;
+        color: $clr-white;
+        border: 1px solid transparent;
+        transition: .5s;
+
+        &.btn-info {
+            background-color: $clr-blue;
+            
+            &:hover {
+                transition: .5s;
+                background-color: $clr-blue-dark;   
+            }
+        }
+
+        &.btn-add-to-cart {
+            background-color: $clr-green;
+
+            &:hover {
+                transition: .5s;
+                background-color: $clr-green-dark;   
+            }
+        }
+    }
+}

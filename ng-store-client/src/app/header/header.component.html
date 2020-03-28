@@ -1,0 +1,44 @@
+<div class="header">
+    <div routerLink="/" class="header-blc-logo"></div>
+
+    <div class="header-blc-control-usercard">
+        <span *ngIf="currentUser && !userCardVisible">{{currentUser.login}}</span>
+        <fa-icon 
+            [icon]="faUserCog"
+            class="fa-user-icon"
+            (click)="displayUserCard()"
+        ></fa-icon>
+    </div>
+    
+    
+    <div class="header-blc-cart-info">
+        <p>total price: <strong>{{totalPrice | currency}}</strong></p>
+        <button 
+            (click)="openCart()"
+            [style.cursor]="(countProducts || cart.orders.length) ? 'pointer' : 'no-drop'"
+            [disabled]="countProducts === 0 && !cart.orders.length"
+        >product cart ({{countProducts}})</button>
+    </div>
+
+    <div class="header-blc-user" [class.drown]="!userCardVisible">
+        <div *ngIf="userCardVisible" class="header-blc-user-card">
+            <div *ngIf="currentUser" class="user-info">
+                <img src="https://i1.wp.com/sova.ponominalu.ru/wp-content/uploads/2019/08/ava-max.jpg?fit=2000%2C1333&ssl=1" alt="ava">
+                <span>
+                    <strong>name:</strong>
+                    {{currentUser.name}}
+                </span>
+                <span>
+                    <strong>login:</strong>
+                    {{currentUser.login}}
+                </span>
+                <button (click)="signOut()">sign out</button>
+            </div>
+    
+            <div *ngIf="!currentUser" class="user-auth">
+                <button (click)="displayComponentAuth($event)">sign in</button>
+                <button (click)="displayComponentAuth($event)">sign up</button>
+            </div>
+        </div>
+    </div>
+</div>

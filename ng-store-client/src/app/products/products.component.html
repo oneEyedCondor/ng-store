@@ -1,0 +1,16 @@
+<app-filter></app-filter>
+
+<div class="main">
+    <div *ngIf="loading">Loading...</div>
+    
+    <div 
+        *ngIf="!loading"
+        class="product-board" >
+            <app-product-card 
+                *ngFor="let pr of allProducts | productsFilter
+                    :data.filter.orderBy
+                    :data.filter.searchStr"
+                [product]="pr">
+            </app-product-card>
+    </div>
+</div>

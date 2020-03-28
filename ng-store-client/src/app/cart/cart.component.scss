@@ -1,0 +1,68 @@
+@import '../shared/makeup/colors.scss';
+
+.cart {
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+    .btn-history-active {
+        color: $clr-white;
+        background-color: $clr-blue;
+        border: 1px solid $clr-blue;
+        transition: 0.3s;
+    }
+    
+    &-history {
+        button {
+            position: absolute;
+            top: 2em;
+            right: 0;
+            padding: 0.6em 1.2em;
+            border: 1px solid $clr-grey;
+            text-transform: capitalize;
+            transition: 0.3s;
+            outline: none;
+        }
+    }
+
+    table {
+        th {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 1rem;
+            border: 1px solid black;
+        }
+
+        td {
+            padding: .2rem 1rem;
+            border: 1px solid black;
+            vertical-align: middle;
+        }
+
+        .product {
+            &-name {
+                max-width: 280px;
+                display: flex;
+                align-items: center;
+                
+                img {
+                    width: 60px;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                p {
+                    margin-left: 1rem;
+                    width: 70%;
+                    word-wrap: break-word;
+                }
+            }
+
+            button {
+                margin: 0 10px;
+                padding: .3rem 1rem;
+            }
+        }
+    }
+}

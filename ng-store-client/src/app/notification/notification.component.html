@@ -1,0 +1,9 @@
+<div *ngIf="active" class="notification-popup">
+    <div class="notification">
+        <p class="notification-message">{{notification}}</p>
+        <button 
+            class="notification-btn"
+            (click)="done()"
+        >&#10004;</button>
+    </div>
+</div>

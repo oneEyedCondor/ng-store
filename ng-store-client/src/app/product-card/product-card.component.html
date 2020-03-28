@@ -1,0 +1,19 @@
+<div class="product-card">
+    <img 
+        [routerLink]="['product', product.id]" 
+        [src]="product.image" 
+        [alt]="product.name">
+    <p>
+        <strong>{{product.name}}</strong>
+        <span>{{product.description}}</span>
+        <span>{{product.price | currency}}</span>
+    </p>
+    <button 
+        [routerLink]="['product', product.id]" 
+        class="btn-info">Info
+    </button>
+    <button 
+        class="btn-add-to-cart" 
+        (click)="addProduct()">Add to cart
+    </button>
+</div>

@@ -1,0 +1,107 @@
+@import '../shared/makeup/colors.scss';
+
+.product {
+    &-info {
+        width: 100%;
+        margin: 1em 0;
+        padding: 1em;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.1rem;
+        border: 1px solid $clr-black;
+        border-radius: 3px;
+        box-sizing: border-box;
+    
+        &-blc-left {
+            width: 30%;
+            img {
+                width: 100%;
+            }
+        }
+        
+        &-blc-right {
+            width: 70%;
+            margin-left: 1em;
+    
+            p {
+                margin-bottom: 0.5em;
+            }
+    
+            button {
+                padding: 1em 2em;
+                text-transform: uppercase;
+            }
+    
+            .product-name {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            .product-desc {
+                line-height: 1.5;
+                text-align: justify;
+            }
+        }
+    }
+
+    &-comments {
+        width: 60%;
+        padding: 1em;
+        box-sizing: border-box;
+
+        .comment {
+            border-bottom: 1px solid $clr-green;
+            padding: 1em;
+            color: $clr-grey-dark;
+
+            &-username,
+            &-date {
+                display: inline-block;
+            }
+
+            &-username {
+                font-size: 0.7rem;
+                font-weight: bold;
+            }
+
+            &-date {
+                margin-left: 0.5em;
+                font-size: 0.6rem;
+                color: $clr-grey;
+            }
+
+            &-text {
+                display: block;
+                margin-top: 0.5em;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        }
+
+        .comment-form {
+            height: 35px;
+            margin-top: 1em;
+
+            input,
+            button {
+                height: 100%;
+                box-sizing: border-box;
+            }
+            input {
+                width: 80%;
+                padding: 0.4em 1em;
+                outline: none;
+            }
+            button {
+                width: 20%;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+
+.product-not-found {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 1.1rem;
+}
